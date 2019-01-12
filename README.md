@@ -11,7 +11,7 @@ However, the TypeScript files contained in this repositry are to be executed wit
 ----
 # Transpiling to JavaScript
 
-To transpile a TypeScript file to JavaScript you need to have [TypeScript](https://www.npmjs.com/package/typescript) installed globally using NPM:
+To transpile a TypeScript file to JavaScript you need to install [TypeScript](https://www.npmjs.com/package/typescript) first:
 ````
     npm install -g typescript
 ````
@@ -20,7 +20,7 @@ After this a TypeScript file can be transpiled by calling the program `tsc`, e.g
 ````
     tsc Variablen.ts
 ```` 
-If no syntax errors are found this will produce a file named `Variablen.js`.
+If no syntax errors are found, then this will produce a file named `Variablen.js`.
 
 This file can then be executed as follows:
 ````
@@ -29,7 +29,8 @@ This file can then be executed as follows:
 
 <br>
 
-As default the target version of JavaScript is ES3, but you can change this using `--target`, e.g.:
+As default `tsc` will generate JavaScript of version ES3, but you can change this using 
+the option `--target`, e.g.:
 ````
     tsc --target es6 Variablen.ts
 ```` 
