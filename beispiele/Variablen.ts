@@ -7,6 +7,7 @@
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 
+ console.log();
 
 let nachricht: String = "Hallo";
 nachricht += " DHBW!";

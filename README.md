@@ -35,6 +35,26 @@ the option `--target`, e.g.:
     tsc --target es6 Variablen.ts
 ```` 
 
+<br>
+
+----
+# Executiong with `ts-node`
+
+You can also use [ts-node](https://www.npmjs.com/package/ts-node) to execute TypeScript files without
+explicit transpilition to JavaScript.
+
+For this package `ts-node` has to be installed after package `typescript` was installed:
+````
+    npm install -g ts-node
+```` 
+Please note that the author of `ts-node` does NOT recommend to install the package globally.
+
+<br>
+
+After this you can execute a TypeScript file "directly":
+````
+    ts-node Variablen.ts
+````
 
 <br>
 
