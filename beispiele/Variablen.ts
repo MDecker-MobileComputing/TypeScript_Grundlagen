@@ -9,7 +9,7 @@
 
  console.log();
 
-let nachricht: String = "Hallo";
+let nachricht: string = "Hallo";
 nachricht += " DHBW!";
 console.log( nachricht );
 

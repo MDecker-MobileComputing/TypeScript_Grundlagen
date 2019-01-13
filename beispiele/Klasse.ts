@@ -13,7 +13,7 @@
      * Wenn das Argument mit einem Schutzmodizierer versehen ist (hier: private),
      * dann wird automatisch eine Member-Variablen mit entsprechendem Typ angelegt.
      */
-    constructor( private _name: String ) {                 
+    constructor( private _name: string ) {                 
     }
 
     /*
