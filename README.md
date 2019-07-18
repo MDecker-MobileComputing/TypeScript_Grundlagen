@@ -11,7 +11,7 @@ However, the TypeScript files contained in this repositry are to be executed wit
 ----
 # Transpiling to JavaScript
 
-To transpile a TypeScript file to JavaScript you need to install [TypeScript](https://www.npmjs.com/package/typescript) first:
+To transpile a TypeScript file to JavaScript, you need to install [TypeScript](https://www.npmjs.com/package/typescript) first:
 ````
     npm install -g typescript
 ````
@@ -42,7 +42,6 @@ the option `--target`, e.g.:
 
 You can also use [ts-node](https://www.npmjs.com/package/ts-node) to execute TypeScript files without
 explicit transpilition to JavaScript.
-
 For this package `ts-node` has to be installed after package `typescript` was installed:
 ````
     npm install -g ts-node
