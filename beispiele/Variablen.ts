@@ -39,3 +39,11 @@ console.log( `Anzahl Elemente in zahlenArray: ${ zahlenArray.length }` );
 let meinTupel : [ string, number, boolean ] = [ "Hallo", 123, false];
 
 console.log(`\nWerte im Tupel: string=${ meinTupel[0] }, number=${ meinTupel[1] }, boolean=${ meinTupel[2] }`);
+
+
+// Aufzählungs-Typen (Default-Werte: 0, 1, 2, ...)
+enum FarbEnumTyp { ROT = "asdf", GELB = 2, BLAU = 3};
+let farbeA : FarbEnumTyp = FarbEnumTyp.ROT,
+    farbeB : FarbEnumTyp = FarbEnumTyp.BLAU;
+
+console.log(`\nFarbe-A=${ farbeA }, Farbe-B=${ farbeB }`);
