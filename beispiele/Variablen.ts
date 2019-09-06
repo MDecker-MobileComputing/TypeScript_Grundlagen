@@ -27,3 +27,15 @@ let irgendwas : any = 42;
 irgendwas = "Hallo Any!";
 console.log( irgendwas + "\n" );
 
+
+// Array mit Zahlenwerden
+let zahlenArray : number[] = [ 11, 22, 33 ];
+console.log( `Anzahl Elemente in zahlenArray: ${ zahlenArray.length }` );
+
+
+// Tupel sind wie Array, nur dass jedes Element einen speziellen Datentyp hat;
+// Tupel können z.B. von Funktionen/Methoden verwendet werden, wenn mehrere
+// Werte zusammen zurückzugeben sind.
+let meinTupel : [ string, number, boolean ] = [ "Hallo", 123, false];
+
+console.log(`\nWerte im Tupel: string=${ meinTupel[0] }, number=${ meinTupel[1] }, boolean=${ meinTupel[2] }`);

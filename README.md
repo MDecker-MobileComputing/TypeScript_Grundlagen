@@ -1,4 +1,4 @@
-# Grundlagen TypeScript
+# Grundlagen TypeScript #
 
 This Git repository contains [some files](beispiele/) to demonstrate the basic usage of 
 the programming language [TypeScript](https://www.typescriptlang.org).
@@ -9,12 +9,15 @@ However, the TypeScript files contained in this repositry are to be executed wit
 <br>
 
 ----
-# Transpiling to JavaScript
+## Transpiling to JavaScript ##
 
 To transpile a TypeScript file to JavaScript, you need to install [TypeScript](https://www.npmjs.com/package/typescript) first:
 ````
     npm install -g typescript
 ````
+On Linux and MacOS you have to prepend a `sudo` in front of this command.
+
+<br>
 
 After this a TypeScript file can be transpiled by calling the program `tsc`, e.g.:
 ````
@@ -38,7 +41,7 @@ the option `--target`, e.g.:
 <br>
 
 ----
-# Executiong with `ts-node`
+## Executiong with `ts-node` ##
 
 You can also use [ts-node](https://www.npmjs.com/package/ts-node) to execute TypeScript files without
 explicit transpilition to JavaScript.
@@ -46,11 +49,11 @@ For this package `ts-node` has to be installed after package `typescript` was in
 ````
     npm install -g ts-node
 ```` 
-Please note that the author of `ts-node` does NOT recommend to install the package globally.
+Again, on Linux and MacOS you have to prepend a `sudo` in front of this command.
 
 <br>
 
-After this you can execute a TypeScript file "directly":
+After this you can execute a TypeScript file "directly", e.g.:
 ````
     ts-node Variablen.ts
 ````
@@ -58,7 +61,7 @@ After this you can execute a TypeScript file "directly":
 <br>
 
 ----
-# License
+## License ##
 
 See the [LICENSE file](LICENSE.md) for license rights and limitations (BSD 3-Clause License)
 for the files in this repository.
