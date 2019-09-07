@@ -47,3 +47,14 @@ let farbeA : FarbEnumTyp = FarbEnumTyp.ROT,
     farbeB : FarbEnumTyp = FarbEnumTyp.BLAU;
 
 console.log(`\nFarbe-A=${ farbeA }, Farbe-B=${ farbeB }`);
+
+
+// Union-Type
+let zahlOderString : string | number;
+zahlOderString = "Hallo";
+console.log(`\nzahlOderString=${ zahlOderString }`);
+zahlOderString = 123;
+console.log(`zahlOderString=${ zahlOderString }`);
+
+
+console.log();
