@@ -30,7 +30,14 @@ console.log( irgendwas + "\n" );
 
 // Array mit Zahlenwerden
 let zahlenArray : number[] = [ 11, 22, 33 ];
+
 console.log( `Anzahl Elemente in zahlenArray: ${ zahlenArray.length }` );
+
+for (let i = 0; i < zahlenArray.length; i++) {
+
+    console.log(`Zahl ${i+1}: ${zahlenArray[i]}`)
+}
+
 
 
 // Tupel sind wie Array, nur dass jedes Element einen speziellen Datentyp hat;
