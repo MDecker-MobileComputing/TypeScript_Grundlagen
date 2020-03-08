@@ -38,14 +38,17 @@ for (let i = 0; i < zahlenArray.length; i++) {
     console.log(`Zahl ${i+1}: ${zahlenArray[i]}`)
 }
 
+console.log();
 
 
-// Tupel sind wie Array, nur dass jedes Element einen speziellen Datentyp hat;
-// Tupel können z.B. von Funktionen/Methoden verwendet werden, wenn mehrere
-// Werte zusammen zurückzugeben sind.
+// Tupel sind wie ein Array mit vorgegebener Länge, bei denen jedes Element einen eigenen Datentyp hat.
+// Tupel können z.B. von Funktionen/Methoden verwendet werden, wenn mehrere  Werte auf einmal
+// zurückzugeben sind.
 let meinTupel : [ string, number, boolean ] = [ "Hallo", 123, false];
 
-console.log(`\nWerte im Tupel: string=${ meinTupel[0] }, number=${ meinTupel[1] }, boolean=${ meinTupel[2] }`);
+console.log( `Wert 1 im Tupel: ${ meinTupel[0] } (string)`  );
+console.log( `Wert 2 im Tupel: ${ meinTupel[1] } (number)`  );
+console.log( `Wert 3 im Tupel: ${ meinTupel[2] } (boolean)` );
 
 
 // Aufzählungs-Typen (Default-Werte: 0, 1, 2, ...)
