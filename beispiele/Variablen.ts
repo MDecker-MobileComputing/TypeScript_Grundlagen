@@ -44,7 +44,7 @@ console.log();
 // Tupel sind wie ein Array mit vorgegebener Länge, bei denen jedes Element einen eigenen Datentyp hat.
 // Tupel können z.B. von Funktionen/Methoden verwendet werden, wenn mehrere  Werte auf einmal
 // zurückzugeben sind.
-let meinTupel : [ string, number, boolean ] = [ "Hallo", 123, false];
+let meinTupel : [ string, number, boolean ] = [ "Hallo", 123, false ];
 
 console.log( `Wert 1 im Tupel: ${ meinTupel[0] } (string)`  );
 console.log( `Wert 2 im Tupel: ${ meinTupel[1] } (number)`  );
