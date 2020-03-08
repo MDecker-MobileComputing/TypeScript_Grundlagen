@@ -52,11 +52,14 @@ console.log( `Wert 3 im Tupel: ${ meinTupel[2] } (boolean)` );
 
 
 // Aufzählungs-Typen (Default-Werte: 0, 1, 2, ...)
-enum FarbEnumTyp { ROT = "asdf", GELB = 2, BLAU = 3};
-let farbeA : FarbEnumTyp = FarbEnumTyp.ROT,
-    farbeB : FarbEnumTyp = FarbEnumTyp.BLAU;
-
-console.log(`\nFarbe-A=${ farbeA }, Farbe-B=${ farbeB }`);
+enum FarbEnumTyp { ROT = 1, GELB = 2, BLAU = 3 };
+let farbe1 : FarbEnumTyp = FarbEnumTyp.ROT,
+    farbe2 : FarbEnumTyp = FarbEnumTyp.BLAU;
+    
+console.log();
+console.log(`Erste  Farbe: ${ farbe1 }`);
+console.log(`Zweite Farbe: ${ farbe2 }`);
+console.log();
 
 
 // Union-Type
