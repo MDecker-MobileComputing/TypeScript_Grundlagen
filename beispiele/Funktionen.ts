@@ -13,6 +13,7 @@ function addieren(x: number, y: number): number {
     return x + y;
 }
 
+// Funktion ohne Rückgabewert
 function ausgabe(str: string): void {
 
     console.log( str );
