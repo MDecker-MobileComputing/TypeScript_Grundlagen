@@ -1,13 +1,13 @@
 
 /*
- * Erklärung zu Promises: https://javascript.info/promise-basics
+ * Erklärung zu Promises (Callbacks, Executor): https://javascript.info/promise-basics
  * <br>
  *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 
 /**
- * Simulierte Wartezeit, bis eine der Funktionen zum Holen von Temperatur bzw. Windgeschwindigkeit
+ * Simulierte Wartezeit, bis die Funktionen zum Holen von Temperatur bzw. Windgeschwindigkeit
  * das Ergebnis zurückgibt.
  */
 const ZWEI_SEKUNDEN = 2;
