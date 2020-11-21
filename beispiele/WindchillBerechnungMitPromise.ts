@@ -56,6 +56,25 @@ class WetterProvider {
   }
 
 
+  public berechneGefuehlteTemperatur_1() {
+
+    let windgeschwindigkeit = wetterProvider.getWindgeschwindigkeit();
+    console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
+
+    let temperatur = wetterProvider.getTemperatur();
+    console.log(`Temperatur: ${temperatur} ° Celsius\n`);
+  }
+
+  public async berechneGefuehlteTemperatur_2() {
+
+    let windgeschwindigkeit = await wetterProvider.getWindgeschwindigkeit();
+    console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
+
+    let temperatur = await wetterProvider.getTemperatur();
+    console.log(`Temperatur: ${temperatur} ° Celsius\n`);
+  }
+
+
 }; // Ende class
 
 
@@ -64,11 +83,9 @@ console.log();
 
 let wetterProvider = new WetterProvider();
 
-let windgeschwindigkeit = wetterProvider.getWindgeschwindigkeit();
-console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
+wetterProvider.berechneGefuehlteTemperatur_1();
 
-let temperatur = wetterProvider.getTemperatur();
-console.log(`Temperatur: ${temperatur} ° Celsius`);
+//wetterProvider.berechneGefuehlteTemperatur_2();
 
 console.log();
 
