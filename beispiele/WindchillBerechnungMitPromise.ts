@@ -136,7 +136,7 @@ class WetterProvider {
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
 
-
+  
   /**
    * In dieser Methode wird nur die tatsächliche Temperatur abgefragt und angezeigt.
    * Statt dem Schlüsselwort `await` wird die Methode `then()` der Klasse `Promise` verwendet, 
@@ -148,13 +148,36 @@ class WetterProvider {
 
     temperaturPromise.then( function(temperaturResolved) {
 
-      console.log(`Tatsächliche Lufttemperatur: ${temperaturResolved} Grad Celsius\n`);
+      console.log(`Temperatur: ${temperaturResolved} Grad Celsius\n`);
+    });
+  }
+
+
+  /**
+   * Beispiele für verkettete (chained) Aufrufe der in der Klasse `Promise` definierten `then()`-Methode.
+   */
+  public async anzeigeTemperaturUndWindgeschwindigkeit() {  
+
+    const temperaturPromise = this.getTemperatur();
+
+    temperaturPromise.then( (temperaturResolved) => { // Arrow-Notation statt function(), damit "this" im Methodenrumpf erhalten bleibt
+
+      console.log(`Temperatur: ${temperaturResolved} Grad Celsius\n`);
+
+      const windgeschwindigkeitPromise = this.getWindgeschwindigkeit();
+
+      return windgeschwindigkeitPromise;
+
+    }).then( (windgeschwindigkeitResolved) => {
+
+      console.log(`Windgeschwindigkeit: ${windgeschwindigkeitResolved} km/h`);
     });
   }
 
 }; // Ende class
 
 
+// **********************************************************************************************************************************
 
 console.log();
 
@@ -164,9 +187,11 @@ let wetterProvider = new WetterProvider();
 
 //wetterProvider.gefuehlteTemperatur_2();
 
-//wetterProvider.gefuehlteTemperatur_3();
+wetterProvider.gefuehlteTemperatur_3();
 
-wetterProvider.anzeigeTemperatur();
+//wetterProvider.anzeigeTemperatur();
+
+//wetterProvider.anzeigeTemperaturUndWindgeschwindigkeit();
 
 console.log();
 
