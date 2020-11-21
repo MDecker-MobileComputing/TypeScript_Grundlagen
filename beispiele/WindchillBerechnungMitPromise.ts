@@ -12,6 +12,7 @@
  */
 const ZWEI_SEKUNDEN = 2;
 
+
 class WetterProvider {
 
   /**
@@ -26,8 +27,9 @@ class WetterProvider {
 
     const promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
-        setTimeout( () => { resolveCallback( temperaturObjekt ) },
-                    ZWEI_SEKUNDEN * 1000
+        setTimeout(
+            () => { resolveCallback( temperaturObjekt ) },
+            ZWEI_SEKUNDEN * 1000
         );
     });
 
@@ -47,8 +49,9 @@ class WetterProvider {
 
     let promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
-        setTimeout( () => { resolveCallback( geschwindigkeitsObjeit ) },
-                    ZWEI_SEKUNDEN * 1000
+        setTimeout(
+            () => { resolveCallback( geschwindigkeitsObjeit ) },
+            ZWEI_SEKUNDEN * 1000
         );
     });
 
@@ -59,7 +62,7 @@ class WetterProvider {
   /**
    * Eigentliche Berechnung der gefühlten Temperatur.<br>
    *
-   * Erklärung Windchill-Formel:
+   * Für Erklärung der Windchill-Formel siehe:
    * * https://www.welt.de/wissenschaft/article112099898/Wie-jeder-seine-gefuehlte-Temperatur-ausrechnen-kann.html
    * * https://de.wikipedia.org/wiki/Windchill
    *
@@ -83,15 +86,15 @@ class WetterProvider {
 
 
   /**
-   * Berechnung der gefühlten Temperatur OHNE await: Syntaktisch nicht möglich,
+   * Berechnung der gefühlten Temperatur _ohne_ `await`: Syntaktisch nicht möglich,
    * weil die Promise-Objekte nicht aufgelöst werden..
    */
   public gefuehlteTemperatur_1() {
 
-    const temperatur = wetterProvider.getTemperatur();
+    const temperatur = this.getTemperatur();
     console.log(`Temperatur: ${temperatur} Grad Celsius`);
 
-    const windgeschwindigkeit = wetterProvider.getWindgeschwindigkeit();
+    const windgeschwindigkeit = this.getWindgeschwindigkeit();
     console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
 
     //const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
@@ -100,15 +103,31 @@ class WetterProvider {
 
 
   /**
-   * Berechnung der gefühlten Temperatur MIT await.
+   * Berechnung der gefühlten Temperatur _mit_ `await` hintereinander.
    */
   public async gefuehlteTemperatur_2() {
 
-    const temperatur = await wetterProvider.getTemperatur();
+    const temperatur = await this.getTemperatur();
     console.log(`Temperatur: ${temperatur} Grad Celsius`);
 
-    const windgeschwindigkeit = await wetterProvider.getWindgeschwindigkeit();
+    const windgeschwindigkeit = await this.getWindgeschwindigkeit();
     console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
+
+    const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
+    console.log(`Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
+  }
+
+
+  /**
+   * Berechnung der gefühlten Temperatur _mit_ `await` und `Promise.all()`, also
+   * mit paralleler Ausführung; benötigt also weniger Zeit zur Ausführung.
+   */
+  public async gefuehlteTemperatur_3() {
+
+    const promise1 = this.getTemperatur();
+    const promise2 = this.getWindgeschwindigkeit();
+
+    const [temperatur, windgeschwindigkeit] = await Promise.all([ promise1, promise2 ]);
 
     const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
     console.log(`Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
@@ -124,7 +143,9 @@ let wetterProvider = new WetterProvider();
 
 //wetterProvider.gefuehlteTemperatur_1();
 
-wetterProvider.gefuehlteTemperatur_2();
+//wetterProvider.gefuehlteTemperatur_2();
+
+wetterProvider.gefuehlteTemperatur_3();
 
 console.log();
 
