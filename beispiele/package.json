@@ -1,0 +1,25 @@
+{
+  "name": "de.mide.typescript.beispiele",
+  "version": "1.0.0",
+  "description": "Beispiel-Dateien mit TypeScript-Code",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node Variablen.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MDecker-MobileComputing/TypeScript_Grundlagen.git"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "MDecker-MobileComputing",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/MDecker-MobileComputing/TypeScript_Grundlagen/issues"
+  },
+  "homepage": "https://github.com/MDecker-MobileComputing/TypeScript_Grundlagen#readme",
+  "devDependencies": {
+    "@types/es6-promise": "^3.3.0"
+  }
+}

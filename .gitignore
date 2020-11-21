@@ -1,2 +1,6 @@
 # JavaScript-Datei (Ergebnis der Transpilierung) nicht in Repo speichern
 *.js
+
+node_modules
+
+
