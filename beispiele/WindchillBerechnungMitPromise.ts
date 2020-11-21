@@ -136,6 +136,22 @@ class WetterProvider {
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
 
+
+  /**
+   * In dieser Methode wird nur die tatsächliche Temperatur abgefragt und angezeigt.
+   * Statt dem Schlüsselwort `await` wird die Methode `then()` der Klasse `Promise` verwendet, 
+   * um zu warten, bis der Temperatur-Promise aufgelöst wurde.
+   */
+  public anzeigeTemperatur() {
+
+    const temperaturPromise = this.getTemperatur();
+
+    temperaturPromise.then( function(temperaturResolved) {
+
+      console.log(`Tatsächliche Lufttemperatur: ${temperaturResolved} Grad Celsius\n`);
+    });
+  }
+
 }; // Ende class
 
 
@@ -148,7 +164,9 @@ let wetterProvider = new WetterProvider();
 
 //wetterProvider.gefuehlteTemperatur_2();
 
-wetterProvider.gefuehlteTemperatur_3();
+//wetterProvider.gefuehlteTemperatur_3();
+
+wetterProvider.anzeigeTemperatur();
 
 console.log();
 
