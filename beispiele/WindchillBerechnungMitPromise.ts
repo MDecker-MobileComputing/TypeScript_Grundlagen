@@ -28,7 +28,7 @@ class WetterProvider {
     const promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
         setTimeout(
-            () => { resolveCallback( temperaturObjekt ) },
+            function() { resolveCallback( temperaturObjekt ) },
             ZWEI_SEKUNDEN * 1000
         );
     });
@@ -50,7 +50,7 @@ class WetterProvider {
     let promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
         setTimeout(
-            () => { resolveCallback( geschwindigkeitsObjeit ) },
+            function(){ resolveCallback( geschwindigkeitsObjeit ) },
             ZWEI_SEKUNDEN * 1000
         );
     });
@@ -98,7 +98,7 @@ class WetterProvider {
     console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
 
     //const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
-    //console.log(`Gefühlte Temperatur: ${temperatur} ° Celsius\n`);
+    //console.log(`=> Gefühlte Temperatur: ${temperatur} ° Celsius\n`);
   }
 
 
@@ -114,7 +114,7 @@ class WetterProvider {
     console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
 
     const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
-    console.log(`Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
+    console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
 
 
