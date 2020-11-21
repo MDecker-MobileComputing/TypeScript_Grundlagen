@@ -28,7 +28,7 @@ class WetterProvider {
     const promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
         setTimeout(
-            function() { resolveCallback( temperaturObjekt ) },
+            function() { resolveCallback( temperaturObjekt ); },
             ZWEI_SEKUNDEN * 1000
         );
     });
@@ -50,7 +50,7 @@ class WetterProvider {
     let promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
         setTimeout(
-            function(){ resolveCallback( geschwindigkeitsObjeit ) },
+            function(){ resolveCallback( geschwindigkeitsObjeit ); },
             ZWEI_SEKUNDEN * 1000
         );
     });
