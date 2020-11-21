@@ -129,8 +129,11 @@ class WetterProvider {
 
     const [temperatur, windgeschwindigkeit] = await Promise.all([ promise1, promise2 ]);
 
+    console.log(`Temperatur: ${temperatur} Grad Celsius`);
+    console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
+
     const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
-    console.log(`Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
+    console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
 
 }; // Ende class
