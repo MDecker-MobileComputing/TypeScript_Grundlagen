@@ -6,6 +6,7 @@
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 
+
 /**
  * Simulierte Wartezeit, bis die Funktionen zum Holen von Temperatur bzw. Windgeschwindigkeit
  * das Ergebnis zurückgibt.
@@ -136,10 +137,10 @@ class WetterProvider {
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
 
-  
+
   /**
    * In dieser Methode wird nur die tatsächliche Temperatur abgefragt und angezeigt.
-   * Statt dem Schlüsselwort `await` wird die Methode `then()` der Klasse `Promise` verwendet, 
+   * Statt dem Schlüsselwort `await` wird die Methode `then()` der Klasse `Promise` verwendet,
    * um zu warten, bis der Temperatur-Promise aufgelöst wurde.
    */
   public anzeigeTemperatur() {
@@ -156,7 +157,7 @@ class WetterProvider {
   /**
    * Beispiele für verkettete (chained) Aufrufe der in der Klasse `Promise` definierten `then()`-Methode.
    */
-  public async anzeigeTemperaturUndWindgeschwindigkeit() {  
+  public async anzeigeTemperaturUndWindgeschwindigkeit() {
 
     const temperaturPromise = this.getTemperatur();
 
