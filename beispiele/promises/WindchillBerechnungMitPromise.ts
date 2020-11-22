@@ -37,12 +37,12 @@ class WetterProvider {
    */
   private async getWindgeschwindigkeit(): Promise<Number> {
 
-    const geschwindigkeitsObjeit = new Number(15);
+    const geschwindigkeitsObjekt = new Number(15);
 
     let promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
         setTimeout(
-            function(){ resolveCallback( geschwindigkeitsObjeit ); },
+            function(){ resolveCallback( geschwindigkeitsObjekt ); },
             1000
         );
     });
