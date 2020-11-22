@@ -1,4 +1,3 @@
-
 /*
  * Erklärung zu Promises (Callbacks, Executor): https://javascript.info/promise-basics
  * <br>
@@ -7,20 +6,13 @@
  */
 
 
-/**
- * Simulierte Wartezeit, bis die Funktionen zum Holen von Temperatur bzw. Windgeschwindigkeit
- * das Ergebnis zurückgibt.
- */
-const ZWEI_SEKUNDEN = 2;
-
-
 class WetterProvider {
 
   /**
    * Funktion zur Simulation einer "langlaufenden" Anfrage, die die aktuelle Lufttemperatur
    * am Ort des Nutzers zurückgibt.
    *
-   * @return Promise mit Temperatur in Grad Celsius, löst immer auf 5° auf.
+   * @return Promise mit Temperatur in Grad Celsius, löst nach einer Sekunde immer auf 5° auf.
    */
   public async getTemperatur(): Promise<Number> {
 
@@ -30,19 +22,18 @@ class WetterProvider {
 
         setTimeout(
             function() { resolveCallback( temperaturObjekt ); },
-            ZWEI_SEKUNDEN * 1000
+            1000
         );
     });
 
     return promise;
   }
 
-
   /**
    * Funktion zur Simulation einer "langlaufenden" Anfrage, die die aktuelle Windgeschwindigkeit
    * am Ort des Nutzers zurückgibt.
    *
-   * @return Promise mit Windgeschwindigkeit in km/h, Promise löst immer auf 15 km/h auf.
+   * @return Promise mit Windgeschwindigkeit in km/h, Promise löst nach einer Sekunde immer auf 15 km/h auf.
    */
   private async getWindgeschwindigkeit(): Promise<Number> {
 
@@ -52,13 +43,12 @@ class WetterProvider {
 
         setTimeout(
             function(){ resolveCallback( geschwindigkeitsObjeit ); },
-            ZWEI_SEKUNDEN * 1000
+            1000
         );
     });
 
     return promise;
   }
-
 
   /**
    * Eigentliche Berechnung der gefühlten Temperatur.<br>
@@ -85,7 +75,6 @@ class WetterProvider {
     return gefuehlteTempraturGerundet;
   }
 
-
   /**
    * Berechnung der gefühlten Temperatur _ohne_ `await`: Syntaktisch nicht möglich,
    * weil die Promise-Objekte nicht aufgelöst werden..
@@ -93,15 +82,14 @@ class WetterProvider {
   public gefuehlteTemperatur_1() {
 
     const temperatur = this.getTemperatur();
-    console.log(`Temperatur: ${temperatur} Grad Celsius`);
+    console.log(`\nTemperatur: ${temperatur} Grad Celsius`);
 
     const windgeschwindigkeit = this.getWindgeschwindigkeit();
-    console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
+    console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h\n`);
 
     //const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
     //console.log(`=> Gefühlte Temperatur: ${temperatur} ° Celsius\n`);
   }
-
 
   /**
    * Berechnung der gefühlten Temperatur _mit_ `await` hintereinander.
@@ -109,7 +97,7 @@ class WetterProvider {
   public async gefuehlteTemperatur_2() {
 
     const temperatur = await this.getTemperatur();
-    console.log(`Temperatur: ${temperatur} Grad Celsius`);
+    console.log(`\nTemperatur: ${temperatur} Grad Celsius`);
 
     const windgeschwindigkeit = await this.getWindgeschwindigkeit();
     console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
@@ -117,7 +105,6 @@ class WetterProvider {
     const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
-
 
   /**
    * Berechnung der gefühlten Temperatur _mit_ `await` und `Promise.all()`, also
@@ -130,13 +117,12 @@ class WetterProvider {
 
     const [temperatur, windgeschwindigkeit] = await Promise.all([ promise1, promise2 ]);
 
-    console.log(`Temperatur: ${temperatur} Grad Celsius`);
+    console.log(`\nTemperatur: ${temperatur} Grad Celsius`);
     console.log(`Windgeschwindigkeit: ${windgeschwindigkeit} km/h`);
 
     const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
-
 
   /**
    * In dieser Methode wird nur die tatsächliche Temperatur abgefragt und angezeigt.
@@ -149,10 +135,9 @@ class WetterProvider {
 
     temperaturPromise.then( function(temperaturResolved) {
 
-      console.log(`Temperatur: ${temperaturResolved} Grad Celsius\n`);
+      console.log(`\nTemperatur: ${temperaturResolved} Grad Celsius\n`);
     });
   }
-
 
   /**
    * Beispiele für verkettete (chained) Aufrufe der in der Klasse `Promise` definierten `then()`-Methode.
@@ -163,7 +148,7 @@ class WetterProvider {
 
     temperaturPromise.then( (temperaturResolved) => { // Arrow-Notation statt function(), damit "this" im Methodenrumpf erhalten bleibt
 
-      console.log(`Temperatur: ${temperaturResolved} Grad Celsius\n`);
+      console.log(`\nTemperatur: ${temperaturResolved} Grad Celsius\n`);
 
       const windgeschwindigkeitPromise = this.getWindgeschwindigkeit();
 
@@ -171,7 +156,7 @@ class WetterProvider {
 
     }).then( (windgeschwindigkeitResolved) => {
 
-      console.log(`Windgeschwindigkeit: ${windgeschwindigkeitResolved} km/h`);
+      console.log(`Windgeschwindigkeit: ${windgeschwindigkeitResolved} km/h\n`);
     });
   }
 
@@ -180,7 +165,6 @@ class WetterProvider {
 
 // **********************************************************************************************************************************
 
-console.log();
 
 let wetterProvider = new WetterProvider();
 
@@ -193,6 +177,4 @@ wetterProvider.gefuehlteTemperatur_3();
 //wetterProvider.anzeigeTemperatur();
 
 //wetterProvider.anzeigeTemperaturUndWindgeschwindigkeit();
-
-console.log();
 
