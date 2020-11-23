@@ -6,7 +6,7 @@
  */
 
 
-class WetterProvider {
+class WindchillTemperatur {
 
   /**
    * Funktion zur Simulation einer "langlaufenden" Anfrage, die die aktuelle Lufttemperatur
@@ -166,7 +166,7 @@ class WetterProvider {
 // **********************************************************************************************************************************
 
 
-let wetterProvider = new WetterProvider();
+let wetterProvider = new WindchillTemperatur();
 
 //wetterProvider.gefuehlteTemperatur_1();
 
