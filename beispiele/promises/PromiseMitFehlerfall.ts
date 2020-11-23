@@ -1,6 +1,8 @@
 // This file is licensed under the terms of the BSD 3-Clause License.
 
 
+class PromiseMitFehlerfall {
+
 /**
  * Funktion liefert in 50% der Aufrufe einen Fehler zurück. In Abhängigkeit von einem
  * Zufallsgenerator wird entweder
@@ -11,51 +13,65 @@
  * * ein Promise-Objekt zurückgeliefert, bei dem nach einer halben Sekunde die Callback-Methode
  *   für den Fehlerfall aufgerufen wird.
  */
-function getTemperatur(): Promise<Number> {
+ private async getTemperatur(): Promise<Number> {
 
-  const zufallszahl = Math.random(); // Zufallszahl zwischen 0.0 und 1.0 erzeugen.
+    const zufallszahl = Math.random(); // Zufallszahl zwischen 0.0 und 1.0 erzeugen.
 
-  let promise = null;
+    let promise = null;
 
-  if (zufallszahl <= 0.5) {
+    if (zufallszahl <= 0.5) {
 
-    const temperaturObjekt = new Number(5);
+        const temperaturObjekt = new Number(5);
 
-    promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
+        promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
 
-        setTimeout(
-            function() { resolveCallback( temperaturObjekt ); },
-            1000
-        );
+            setTimeout(
+                function() { resolveCallback( temperaturObjekt ); },
+                1000
+            );
+        });
+
+    } else {
+
+        promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
+
+            setTimeout(
+                function() { rejectCallback( "Verbindung zu Server mit Wetterdaten fehlgeschlagen." ); },
+                500
+            );
+        });
+
+    }
+
+    return promise;
+ }
+
+
+ /**
+  * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit `then()` und `catch()` ausgewertet.
+  */
+ public main_then() {
+
+    const temperaturPromise = this.getTemperatur();
+
+    temperaturPromise.then( function(temperaturResolved) {
+
+      console.log(`\nTemperatur: ${temperaturResolved} Grad Celsius\n`);
+
+    }).catch( function(fehlerObjekt) {
+
+      console.log(`\nFehler aufgetreten: ${fehlerObjekt}\n`);
+
     });
 
-  } else {
+ }
 
-    promise = new Promise<Number>(function(resolveCallback, rejectCallback) {
-
-        setTimeout(
-            function() { rejectCallback( "Verbindung zu Server mit Wetterdaten fehlgeschlagen." ); },
-            500
-        );
-    });
-
-  }
-
-  return promise;
 }
 
 
 // **********************************************************************************************************************************
 
 
-const temperaturPromise = getTemperatur();
+let promiseMitFehlerfall = new PromiseMitFehlerfall();
 
-temperaturPromise.then( function(temperaturResolved) {
-
-  console.log(`\nTemperatur: ${temperaturResolved} Grad Celsius\n`);
-
-}).catch( function(fehlerObjekt) {
-
-  console.log(`\nFehler aufgetreten: ${fehlerObjekt}\n`);
-
-});
+promiseMitFehlerfall.main_then();
