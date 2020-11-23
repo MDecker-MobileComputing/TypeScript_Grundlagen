@@ -4,6 +4,11 @@
 class PromiseMitFehlerfall {
 
  /**
+  * Funktion simuliert einen API-Zugriff (z.B. Web-API oder Auslesen lokaler Sensor), mit dem
+  * der die aktuelle Lufttemperatur am Aufenthaltsort des Nutzers zurückgegeben wird.
+  * Bei diesem API-Zugriff handelt es sich um eine "potenziell langlaufende Operation".
+  * <br><br>
+  *
   * Funktion liefert in 50% der Aufrufe einen Fehler zurück. In Abhängigkeit von einem
   * Zufallsgenerator wird entweder
   *
@@ -48,6 +53,17 @@ class PromiseMitFehlerfall {
 
 
  /**
+  * Naiver Aufruf der Methode `getTemperatur()`, so als würde es sich um eine "normale" (nicht-asynchrone) Methode handeln.
+  */
+ public static main_naiv() {
+
+    const temperatur = this.getTemperatur();
+
+    console.log(`\nTemperatur: ${temperatur} Grad Celsius\n`);
+ }
+
+
+ /**
   * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit `then()` und `catch()` ausgewertet.
   */
  public static async main_then() {
@@ -87,6 +103,8 @@ class PromiseMitFehlerfall {
 
 // **********************************************************************************************************************************
 
+
+//PromiseMitFehlerfall.main_naiv();
 
 //PromiseMitFehlerfall.main_then();
 
