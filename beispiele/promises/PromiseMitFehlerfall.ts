@@ -13,7 +13,7 @@ class PromiseMitFehlerfall {
  * * ein Promise-Objekt zurückgeliefert, bei dem nach einer halben Sekunde die Callback-Methode
  *   für den Fehlerfall aufgerufen wird.
  */
- private async getTemperatur(): Promise<Number> {
+ private static async getTemperatur(): Promise<Number> {
 
     const zufallszahl = Math.random(); // Zufallszahl zwischen 0.0 und 1.0 erzeugen.
 
@@ -50,7 +50,7 @@ class PromiseMitFehlerfall {
  /**
   * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit `then()` und `catch()` ausgewertet.
   */
- public main_then() {
+ public static main_then() {
 
     const temperaturPromise = this.getTemperatur();
 
@@ -63,7 +63,6 @@ class PromiseMitFehlerfall {
       console.log(`\nFehler aufgetreten: ${fehlerObjekt}\n`);
 
     });
-
  }
 
 }
@@ -72,6 +71,4 @@ class PromiseMitFehlerfall {
 // **********************************************************************************************************************************
 
 
-let promiseMitFehlerfall = new PromiseMitFehlerfall();
-
-promiseMitFehlerfall.main_then();
+PromiseMitFehlerfall.main_then();

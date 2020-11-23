@@ -14,7 +14,7 @@ class WindchillTemperatur {
    *
    * @return Promise mit Temperatur in Grad Celsius, löst nach einer Sekunde immer auf 5° auf.
    */
-  public async getTemperatur(): Promise<Number> {
+  public static async getTemperatur(): Promise<Number> {
 
     const temperaturObjekt = new Number(5);
 
@@ -35,7 +35,7 @@ class WindchillTemperatur {
    *
    * @return Promise mit Windgeschwindigkeit in km/h, Promise löst nach einer Sekunde immer auf 15 km/h auf.
    */
-  private async getWindgeschwindigkeit(): Promise<Number> {
+  private static async getWindgeschwindigkeit(): Promise<Number> {
 
     const geschwindigkeitsObjekt = new Number(15);
 
@@ -63,7 +63,7 @@ class WindchillTemperatur {
    *
    * @return  Gefühlte Temperatur auf eine Nachkommastelle gerundet.
    */
-  private berechneGefuehlteTemperatur(temperatur: Number, windgeschwindigkeit: Number) : Number {
+  private static berechneGefuehlteTemperatur(temperatur: Number, windgeschwindigkeit: Number) : Number {
 
     const v_a = temperatur.valueOf();
     const v   = Math.pow(windgeschwindigkeit.valueOf(), 0.16);
@@ -79,7 +79,7 @@ class WindchillTemperatur {
    * Berechnung der gefühlten Temperatur _ohne_ `await`: Syntaktisch nicht möglich,
    * weil die Promise-Objekte nicht aufgelöst werden..
    */
-  public gefuehlteTemperatur_1() {
+  public static gefuehlteTemperatur_1() {
 
     const temperatur = this.getTemperatur();
     console.log(`\nTemperatur: ${temperatur} Grad Celsius`);
@@ -94,7 +94,7 @@ class WindchillTemperatur {
   /**
    * Berechnung der gefühlten Temperatur _mit_ `await` hintereinander.
    */
-  public async gefuehlteTemperatur_2() {
+  public static async gefuehlteTemperatur_2() {
 
     const temperatur = await this.getTemperatur();
     console.log(`\nTemperatur: ${temperatur} Grad Celsius`);
@@ -110,7 +110,7 @@ class WindchillTemperatur {
    * Berechnung der gefühlten Temperatur _mit_ `await` und `Promise.all()`, also
    * mit paralleler Ausführung; benötigt also weniger Zeit zur Ausführung.
    */
-  public async gefuehlteTemperatur_3() {
+  public static async gefuehlteTemperatur_3() {
 
     const promise1 = this.getTemperatur();
     const promise2 = this.getWindgeschwindigkeit();
@@ -129,7 +129,7 @@ class WindchillTemperatur {
    * Statt dem Schlüsselwort `await` wird die Methode `then()` der Klasse `Promise` verwendet,
    * um zu warten, bis der Temperatur-Promise aufgelöst wurde.
    */
-  public anzeigeTemperatur() {
+  public static anzeigeTemperatur() {
 
     const temperaturPromise = this.getTemperatur();
 
@@ -142,7 +142,7 @@ class WindchillTemperatur {
   /**
    * Beispiele für verkettete (chained) Aufrufe der in der Klasse `Promise` definierten `then()`-Methode.
    */
-  public async anzeigeTemperaturUndWindgeschwindigkeit() {
+  public static async anzeigeTemperaturUndWindgeschwindigkeit() {
 
     const temperaturPromise = this.getTemperatur();
 
@@ -166,15 +166,13 @@ class WindchillTemperatur {
 // **********************************************************************************************************************************
 
 
-let wetterProvider = new WindchillTemperatur();
+//WindchillTemperatur.gefuehlteTemperatur_1();
 
-//wetterProvider.gefuehlteTemperatur_1();
+//WindchillTemperatur.gefuehlteTemperatur_2();
 
-//wetterProvider.gefuehlteTemperatur_2();
+WindchillTemperatur.gefuehlteTemperatur_3();
 
-wetterProvider.gefuehlteTemperatur_3();
+//WindchillTemperatur.anzeigeTemperatur();
 
-//wetterProvider.anzeigeTemperatur();
-
-//wetterProvider.anzeigeTemperaturUndWindgeschwindigkeit();
+//WindchillTemperatur.anzeigeTemperaturUndWindgeschwindigkeit();
 
