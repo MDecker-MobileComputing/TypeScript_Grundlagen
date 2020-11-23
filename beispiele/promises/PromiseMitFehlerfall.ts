@@ -3,16 +3,16 @@
 
 class PromiseMitFehlerfall {
 
-/**
- * Funktion liefert in 50% der Aufrufe einen Fehler zurück. In Abhängigkeit von einem
- * Zufallsgenerator wird entweder
- *
- * * ein Promise-Objekt zurückgeliefert, bei dem nach einer Sekunde die Callback-Methode
- *   für den Erfolgsfall aufgerufen wird (die Temperatur ist dann immer 5°).
- *
- * * ein Promise-Objekt zurückgeliefert, bei dem nach einer halben Sekunde die Callback-Methode
- *   für den Fehlerfall aufgerufen wird.
- */
+ /**
+  * Funktion liefert in 50% der Aufrufe einen Fehler zurück. In Abhängigkeit von einem
+  * Zufallsgenerator wird entweder
+  *
+  * * ein Promise-Objekt zurückgeliefert, bei dem nach einer Sekunde die Callback-Methode
+  *   für den Erfolgsfall aufgerufen wird (die Temperatur ist dann immer 5°).
+  *
+  * * ein Promise-Objekt zurückgeliefert, bei dem nach einer halben Sekunde die Callback-Methode
+  *   für den Fehlerfall aufgerufen wird.
+  */
  private static async getTemperatur(): Promise<Number> {
 
     const zufallszahl = Math.random(); // Zufallszahl zwischen 0.0 und 1.0 erzeugen.
@@ -50,7 +50,7 @@ class PromiseMitFehlerfall {
  /**
   * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit `then()` und `catch()` ausgewertet.
   */
- public static main_then() {
+ public static async main_then() {
 
     const temperaturPromise = this.getTemperatur();
 
@@ -61,14 +61,33 @@ class PromiseMitFehlerfall {
     }).catch( function(fehlerObjekt) {
 
       console.log(`\nFehler aufgetreten: ${fehlerObjekt}\n`);
-
     });
  }
 
-}
+
+ /**
+  * Aufruf der asynchronen Methode `getTemperatur()` mit `await`, für Fehlerbehandlung wird ein `try`-`catch`-Block verwendet.
+  */
+ public static async main_await() {
+
+    try {
+
+        const temperaturResolved = await this.getTemperatur();
+
+        console.log(`\nTemperatur: ${temperaturResolved} Grad Celsius\n`);
+    }
+    catch(fehlerObjekt) {
+
+        console.log(`\nFehler aufgetreten: ${fehlerObjekt}\n`);
+    }
+ }
+
+} // Ende class
 
 
 // **********************************************************************************************************************************
 
 
-PromiseMitFehlerfall.main_then();
+//PromiseMitFehlerfall.main_then();
+
+PromiseMitFehlerfall.main_await();
