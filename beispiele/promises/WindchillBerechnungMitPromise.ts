@@ -10,7 +10,8 @@ class WindchillTemperatur {
 
   /**
    * Funktion zur Simulation einer "langlaufenden" Anfrage, die die aktuelle Lufttemperatur
-   * am Ort des Nutzers zurückgibt.
+   * am Ort des Nutzers zurückgibt. Diese Temperatur könnte z.B. von einem Sensor oder
+   * einer Web-API zurückgeliefert werden.
    *
    * @return Promise mit Temperatur in Grad Celsius, löst nach einer Sekunde immer auf 5° auf.
    */
@@ -77,7 +78,7 @@ class WindchillTemperatur {
 
   /**
    * Berechnung der gefühlten Temperatur _ohne_ `await`: Syntaktisch nicht möglich,
-   * weil die Promise-Objekte nicht aufgelöst werden..
+   * weil die Promise-Objekte nicht aufgelöst werden.
    */
   public static gefuehlteTemperatur_1() {
 
