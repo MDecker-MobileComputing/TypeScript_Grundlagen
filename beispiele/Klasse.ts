@@ -23,6 +23,17 @@
 
         return "\nHallo " + this._name + "!\n";
     }
+
+    public addieren(x: number, y: number): number {
+
+      return x + y;
+    }
+ 
+    public addieren2 = (x: number, y: number) => {
+
+      return x + y;
+    }
+
     
   }; // Ende der Klasse
 
@@ -34,3 +45,5 @@ let objekt2 = new Begruessung( "Bob"   );
 
 console.log( objekt1.getBegruessung() );
 console.log( objekt2.getBegruessung() );
+
+console.log( objekt1.addieren2( 2, 3 ) );
