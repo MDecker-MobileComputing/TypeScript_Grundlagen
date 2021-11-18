@@ -43,7 +43,7 @@ zahlenListen.hinzufuegen(5);
 zahlenListen.hinzufuegen(7);
 zahlenListen.hinzufuegen(11);
 //zahlenListen.hinzufuegen("17"); // nicht zulässig
-//zahlenListen.hinzufuegen("true"); // nicht zulässig
+//zahlenListen.hinzufuegen(true); // nicht zulässig
 
 let stringListe = new MeineListe<string>("Vornamen");
 stringListe.hinzufuegen("Alice");
