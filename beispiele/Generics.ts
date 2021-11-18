@@ -24,27 +24,31 @@
       this._elementeArray.push(e);
     }
 
-    public printInfo(): void {
+    public ausgeben(): void {
 
-      console.log(`\nDie Liste mit Namen "${this._nameDerListe}" hat ${this._elementeArray.length} Elemente.\n`);
+      console.log(`\nDie Liste mit Namen "${this._nameDerListe}" hat ${this._elementeArray.length} Elemente:`);
+      for (let i = 0; i < this._elementeArray.length; i++) {
+        console.log(`  ${this._elementeArray[i]}`);
+      }      
     }
-
     
   }; // Ende der Klasse
 
 
 /* *** Ab hier Verwendung der Klasse *** */
 
-let zahlenListen = new MeineListe<number>("Liste mit Prinzahlen");
+let zahlenListen = new MeineListe<number>("Primzahlen");
 zahlenListen.hinzufuegen(3);
 zahlenListen.hinzufuegen(5);
 zahlenListen.hinzufuegen(7);
 zahlenListen.hinzufuegen(11);
+//zahlenListen.hinzufuegen("17"); // nicht zulässig
+//zahlenListen.hinzufuegen("true"); // nicht zulässig
 
-let stringListe = new MeineListe<string>("Liste mit Vornamen");
+let stringListe = new MeineListe<string>("Vornamen");
 stringListe.hinzufuegen("Alice");
 stringListe.hinzufuegen("Bob");
 stringListe.hinzufuegen("Claire");
 
-zahlenListen.printInfo();
-stringListe.printInfo();
+zahlenListen.ausgeben();
+stringListe.ausgeben();
