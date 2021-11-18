@@ -7,8 +7,8 @@
   */
 
   
-  class Begruessung {
-    
+class Begruessung {
+
     /*
      * Wenn das Argument mit einem Schutzmodizierer versehen ist (hier: private),
      * dann wird automatisch eine Member-Variablen mit entsprechendem Typ angelegt.
@@ -28,14 +28,14 @@
 
       return x + y;
     }
- 
+
     public addieren2 = (x: number, y: number) => {
 
       return x + y;
     }
 
-    
-  }; // Ende der Klasse
+
+}; // Ende der Klasse
 
 
 /* *** Ab hier Verwendung der Klasse *** */
