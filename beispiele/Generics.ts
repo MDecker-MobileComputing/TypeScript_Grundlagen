@@ -1,12 +1,12 @@
 
- /* 
+ /*
   * Beispiel für eine generische Klasse in TypeScript.
   * siehe auch: https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-classes
   *
   * This file is licensed under the terms of the BSD 3-Clause License.
   */
 
-  
+
  /**
   * Objekte der Klasse sind eine Liste von Elementen eines bestimmten Datentyps, der durch
   * den Typ-Parameter "ElementTyp" repräsentiert wird.
@@ -15,8 +15,8 @@
 class MeineListe<ElementTyp> {
 
     private _elementeArray: ElementTyp[] = [];
-    
-    constructor( private _nameDerListe: string ) {                 
+
+    constructor( private _nameDerListe: string ) {
     }
 
     public hinzufuegen(e: ElementTyp): void {
@@ -26,14 +26,16 @@ class MeineListe<ElementTyp> {
 
     public ausgeben(): void {
 
-      console.log(`\nDie Liste mit Namen "${this._nameDerListe}" hat ${this._elementeArray.length} Elemente:`);
+      console.log(`Die Liste mit Namen "${this._nameDerListe}" hat ${this._elementeArray.length} Elemente:`);
       for (let i = 0; i < this._elementeArray.length; i++) {
         console.log(`  ${this._elementeArray[i]}`);
-      }      
+      }
+      console.log("\n");
     }
-    
+
 }; // Ende der Klasse
 
+console.log("\n");
 
 /* *** Ab hier Verwendung der Klasse *** */
 
