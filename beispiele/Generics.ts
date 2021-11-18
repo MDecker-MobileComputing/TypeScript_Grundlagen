@@ -12,7 +12,7 @@
   * den Typ-Parameter "ElementTyp" repräsentiert wird.
   * Die Liste hat zudem einen Namen von Typ String.
   */
-  class MeineListe<ElementTyp> {
+class MeineListe<ElementTyp> {
 
     private _elementeArray: ElementTyp[] = [];
     
@@ -32,7 +32,7 @@
       }      
     }
     
-  }; // Ende der Klasse
+}; // Ende der Klasse
 
 
 /* *** Ab hier Verwendung der Klasse *** */
