@@ -38,6 +38,7 @@ class MeineListe<ElementTyp> {
 /* *** Ab hier Verwendung der Klasse *** */
 
 let zahlenListen = new MeineListe<number>("Primzahlen");
+
 zahlenListen.hinzufuegen(3);
 zahlenListen.hinzufuegen(5);
 zahlenListen.hinzufuegen(7);
@@ -45,7 +46,9 @@ zahlenListen.hinzufuegen(11);
 //zahlenListen.hinzufuegen("17"); // nicht zulässig
 //zahlenListen.hinzufuegen(true); // nicht zulässig
 
+
 let stringListe = new MeineListe<string>("Vornamen");
+
 stringListe.hinzufuegen("Alice");
 stringListe.hinzufuegen("Bob");
 stringListe.hinzufuegen("Claire");
