@@ -13,13 +13,17 @@ function addieren(x: number, y: number): number {
     return x + y;
 }
 
-// wie addieren(), aber in Pfeil-Operator (Arrow Functions)
+/*
+ * Wie addieren(), aber mit Pfeil-Operator (Arrow Functions),
+ */
 let addieren2 = (x: number, y: number) => {
 
     return x + y;
 }
 
-// Funktion ohne Rückgabewert
+/*
+ * Funktion ohne Rückgabewert.
+ */
 function ausgabe(str: string): void {
 
     console.log( str );
