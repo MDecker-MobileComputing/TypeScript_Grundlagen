@@ -34,7 +34,6 @@ class Begruessung {
       return x + y;
     }
 
-
 }; // Ende der Klasse
 
 

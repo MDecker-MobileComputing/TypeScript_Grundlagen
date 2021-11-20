@@ -37,6 +37,7 @@ class MeineListe<ElementTyp> {
 
 console.log("\n");
 
+
 /* *** Ab hier Verwendung der Klasse *** */
 
 let zahlenListen = new MeineListe<number>("Primzahlen");

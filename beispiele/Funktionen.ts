@@ -32,6 +32,8 @@ function ausgabe(str: string): void {
 
 console.log();
 
+/* ****** Ab hier Aufruf der Funktionen ****** */
+
 let summe = addieren( 2, 3 );
 //let summe = addieren2( 2, 3 );
 console.log(`summe: ${summe}`);
