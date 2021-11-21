@@ -8,9 +8,7 @@
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 
- // Zeitstempel in Sekunden seit dem 1.1.1970, 0:00, UTC
-
- 
+// Zeitstempel in Sekunden seit dem 1.1.1970, 0:00, UTC 
 const zahlAusComic = 1420070400;
 
 let datum = new Date( 1420070400 * 1000 );
