@@ -53,7 +53,8 @@ class PromiseMitFehlerfall {
 
 
  /**
-  * Naiver Aufruf der Methode `getTemperatur()`, so als würde es sich um eine "normale" (nicht-asynchrone) Methode handeln.
+  * Naiver Aufruf der Methode `getTemperatur()`, so als würde es sich um eine 
+  * "normale" (nicht-asynchrone) Methode handeln.
   */
  public static main_naiv() {
 
@@ -64,7 +65,8 @@ class PromiseMitFehlerfall {
 
 
  /**
-  * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit `then()` und `catch()` ausgewertet.
+  * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit 
+  * `then()` und `catch()` ausgewertet.
   */
  public static async main_then() {
 
@@ -82,7 +84,8 @@ class PromiseMitFehlerfall {
 
 
  /**
-  * Aufruf der asynchronen Methode `getTemperatur()` mit `await`, für Fehlerbehandlung wird ein `try`-`catch`-Block verwendet.
+  * Aufruf der asynchronen Methode `getTemperatur()` mit `await`, für Fehlerbehandlung 
+  * wird ein `try`-`catch`-Block verwendet.
   */
  public static async main_await() {
 
