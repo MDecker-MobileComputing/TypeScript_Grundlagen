@@ -20,7 +20,7 @@ class PromiseMitFehlerfall {
   */
  private static async getTemperatur(): Promise<Number> {
 
-    const zufallszahl = Math.random(); // Zufallszahl zwischen 0.0 und 1.0 erzeugen.
+    const zufallszahl = Math.random(); // Zufallszahl (gleichverteilt) zwischen 0.0 und 1.0 erzeugen.
 
     let promise = null;
 
@@ -45,7 +45,6 @@ class PromiseMitFehlerfall {
                 500
             );
         });
-
     }
 
     return promise;
@@ -53,7 +52,7 @@ class PromiseMitFehlerfall {
 
 
  /**
-  * Naiver Aufruf der Methode `getTemperatur()`, so als würde es sich um eine 
+  * Naiver Aufruf der Methode `getTemperatur()`, so als würde es sich um eine
   * "normale" (nicht-asynchrone) Methode handeln.
   */
  public static main_naiv() {
@@ -65,7 +64,7 @@ class PromiseMitFehlerfall {
 
 
  /**
-  * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit 
+  * Aufruf der asynchronen Methode `getTemperatur()`, Promise-Objekt wird mit
   * `then()` und `catch()` ausgewertet.
   */
  public static async main_then() {
@@ -84,7 +83,7 @@ class PromiseMitFehlerfall {
 
 
  /**
-  * Aufruf der asynchronen Methode `getTemperatur()` mit `await`, für Fehlerbehandlung 
+  * Aufruf der asynchronen Methode `getTemperatur()` mit `await`, für Fehlerbehandlung
   * wird ein `try`-`catch`-Block verwendet.
   */
  public static async main_await() {
