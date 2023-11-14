@@ -1,5 +1,7 @@
 # Grundlagen TypeScript #
 
+<br>
+
 This Git repository contains [some files](beispiele/) to demonstrate the basic usage of 
 the programming language [TypeScript](https://www.typescriptlang.org).
 TypeScript is a language by Microsoft, which extends JavaScript (i.e. it is a superset of JavaScript) and can be transpiled to JavaScript, so it can be
@@ -9,7 +11,10 @@ However, the TypeScript files contained in this repositry are to be executed wit
 <br>
 
 ----
+
 ## Transpiling to JavaScript ##
+
+<br>
 
 To transpile a TypeScript file to JavaScript, you need to install [TypeScript](https://www.npmjs.com/package/typescript) first:
 ````
@@ -41,7 +46,10 @@ the option `--target`, e.g.:
 <br>
 
 ----
+
 ## Executiong with `ts-node` ##
+
+<br>
 
 You can also use [ts-node](https://www.npmjs.com/package/ts-node) to execute TypeScript files without
 explicit transpilition to JavaScript.
@@ -63,6 +71,9 @@ After this you can execute a TypeScript file "directly", e.g.:
 ----
 ## License ##
 
+<br>
+
 See the [LICENSE file](LICENSE.md) for license rights and limitations (BSD 3-Clause License)
 for the files in this repository.
 
+<br>
