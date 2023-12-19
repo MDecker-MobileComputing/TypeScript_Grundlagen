@@ -30,6 +30,7 @@ class WindchillTemperatur {
     return promise;
   }
 
+
   /**
    * Funktion zur Simulation einer "langlaufenden" Anfrage, die die aktuelle Windgeschwindigkeit
    * am Ort des Nutzers zurückgibt.
@@ -50,6 +51,7 @@ class WindchillTemperatur {
 
     return promise;
   }
+
 
   /**
    * Eigentliche Berechnung der gefühlten Temperatur.<br>
@@ -76,6 +78,7 @@ class WindchillTemperatur {
     return gefuehlteTempraturGerundet;
   }
 
+
   /**
    * Berechnung der gefühlten Temperatur _ohne_ `await`: Syntaktisch nicht möglich,
    * weil die Promise-Objekte nicht aufgelöst werden.
@@ -92,6 +95,7 @@ class WindchillTemperatur {
     //console.log(`=> Gefühlte Temperatur: ${temperatur} ° Celsius\n`);
   }
 
+
   /**
    * Berechnung der gefühlten Temperatur _mit_ `await` hintereinander.
    */
@@ -106,6 +110,7 @@ class WindchillTemperatur {
     const gefuehlteTemp = this.berechneGefuehlteTemperatur(temperatur, windgeschwindigkeit);
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
+
 
   /**
    * Berechnung der gefühlten Temperatur _mit_ `await` und `Promise.all()`, also
@@ -125,6 +130,7 @@ class WindchillTemperatur {
     console.log(`=> Gefühlte Temperatur: ${gefuehlteTemp} Grad Celsius\n`);
   }
 
+
   /**
    * In dieser Methode wird nur die tatsächliche Temperatur abgefragt und angezeigt.
    * Statt dem Schlüsselwort `await` wird die Methode `then()` der Klasse `Promise` verwendet,
@@ -139,6 +145,7 @@ class WindchillTemperatur {
       console.log(`\nTemperatur: ${temperaturResolved} Grad Celsius\n`);
     });
   }
+
 
   /**
    * Beispiele für verkettete (chained) Aufrufe der in der Klasse `Promise` definierten `then()`-Methode.
