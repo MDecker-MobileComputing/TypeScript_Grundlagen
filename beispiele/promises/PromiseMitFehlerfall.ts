@@ -15,14 +15,14 @@ class PromiseMitFehlerfall {
   * * ein Promise-Objekt zurückgeliefert, bei dem nach einer Sekunde die Callback-Methode
   *   für den Erfolgsfall aufgerufen wird (die Temperatur ist dann immer 5°).
   *
-  * * oder ein Promise-Objekt zurückgeliefert, bei dem nach einer halben Sekunde die 
+  * * oder ein Promise-Objekt zurückgeliefert, bei dem nach einer halben Sekunde die
   *   Callback-Methode für den Fehlerfall aufgerufen wird.
   */
  private static async getTemperatur(): Promise<Number> {
 
     const zufallszahl = Math.random(); // Zufallszahl (gleichverteilt) zwischen 0.0 und 1.0 erzeugen.
 
-    let promise = null;
+    let promise;
 
     if (zufallszahl <= 0.5) {
 
