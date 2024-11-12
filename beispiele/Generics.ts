@@ -28,14 +28,16 @@ class MeineListe<ElementTyp> {
 
       console.log(`Die Liste mit Namen "${this._nameDerListe}" hat ${this._elementeArray.length} Elemente:`);
       for (let i = 0; i < this._elementeArray.length; i++) {
+
         console.log(`  ${this._elementeArray[i]}`);
       }
-      console.log("\n");
+
+      console.log();
     }
 
 }; // Ende der Klasse
 
-console.log("\n");
+console.log();
 
 
 /* *** Ab hier Verwendung der Klasse *** */
